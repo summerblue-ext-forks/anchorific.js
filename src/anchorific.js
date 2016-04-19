@@ -128,6 +128,10 @@ if ( typeof Object.create !== 'function' ) {
 								.replace( /\s+/g, '-' )
 								.toLowerCase();
 
+            		if (name === '' || name.indexOf('-') > -1) {
+                		name = encodeURIComponent(obj.text());
+            		}
+            		
 			return name;
 		},
 
